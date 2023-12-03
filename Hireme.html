@@ -28,11 +28,6 @@
       align-items: center;
     }
 
-<!--    .animated-letter {-->
-<!--      animation: jumpAnimation 1s infinite alternate;-->
-<!--      margin-right: 5px;-->
-<!--    }-->
-
     .animated-letter {
       display: inline-block;
       animation: jumpAnimation 1s infinite alternate;
@@ -62,7 +57,6 @@
     .letter6 {
       animation-delay: 0.1s;
     }
-
 
     @keyframes jumpAnimation {
       0% {
@@ -137,45 +131,18 @@
       margin-top: 10px;
     }
   </style>
-<!--   <script>-->
-<!--    // Function to decode email address-->
-<!--    function decodeEmail(encodedEmail) {-->
-<!--      return encodedEmail.split('').map(char => String.fromCharCode(char.charCodeAt(0) - 1)).join('');-->
-<!--    }-->
-
-<!--    // Function to set contact information dynamically-->
-<!--    function setContactInformation() {-->
-<!--      document.getElementById('mobileLink').href = 'tel:' + '+9546382945';-->
-<!--      document.getElementById('emailLink').href = 'mailto:' + decodeEmail('tibcpboi38AnbhmA');-->
-<!--    }-->
-<!--  </script>-->
 </head>
-<!--<body onload="setContactInformation()">-->
 <body>
-
-<!--<div id="hireMeText">-->
-<!--  <span class="animated-letter" style="color: #e74c3c;">H</span>-->
-<!--  <span class="animated-letter" style="color: #3498db;">i</span>-->
-<!--  <span class="animated-letter" style="color: #e67e22;">r</span>-->
-<!--  <span class="animated-letter" style="color: #8000ff;">e</span>-->
-<!--  <span class="animated-letter" style="color: #2ecc71;"> </span>-->
-<!--  <span class="animated-letter" style="color: #e74c3c;">M</span>-->
-<!--  <span class="animated-letter" style="color: #3498db;">e</span>-->
-<!--</div>-->
 
 <div id="hireMeText">
   <span class="animated-letter letter1" style="color: #e74c3c;">H</span>
   <span class="animated-letter letter2" style="color: #3498db;">i</span>
-<!--  <span class="animated-letter letter3" style="color: #e67e22;">r</span>-->
   <span class="animated-letter letter3" style="color: #34db77;">r</span>
-<!--  <span class="animated-letter letter4" style="color: #8000ff;">e</span>-->
   <span class="animated-letter letter4" style="color: #0000ff;">e</span>
   <span class="animated-letter letter5" style="color: #2ecc71;"> </span>
-<!--  <span class="animated-letter letter6" style="color: #e74c3c;">M</span>-->
   <span class="animated-letter letter6" style="color: #ffff00;">M</span>
   <span class="animated-letter letter1" style="color: #3498db;">e</span>
 </div>
-
 
 <button id="revealButton" onclick="revealButtons()">Reveal</button>
 
@@ -199,9 +166,7 @@
 <div id="contactSection">
   <p style="color:#db3498;">For inquiries, you can contact me at:</p>
   <p style="text-align:center; color: red;">
-<!--    * <a style="color: darkmagenta;" id="mobileLink">Mobile</a>-->
-<!--    * <a style="color: darkmagenta;" id="emailLink">Email</a>-->
-    * <a style="color: darkmagenta;" href="tel:+919025867107">Mobile</a>
+    *  <a style="color: darkmagenta;" href="tel:+919025867107">Mobile</a>
     *  <a style="color: darkmagenta;" href="mailto:shobanashobana197@gmail.com">shobanashobana197@gmail.com</a>
     *  <a style="color: darkmagenta;" href="https://www.linkedin.com/in/shobana27/">linkedin</a>
     *  <a style="color: darkmagenta;" href="https://shobanashobana1971.wixsite.com/thebravegirl/">Website</a>
@@ -209,9 +174,8 @@
   </p>
 </div>
 
-
 <script>
-
+  
   let skillsRevealed = false;
   function revealButtons() {
     document.getElementById('buttonsContainer').style.display = 'flex';
@@ -344,7 +308,7 @@
       case 'Hobbies':
         return  `
           <ul style="text-align: left;">
-            <p><span style="color: black;">Writing Quotes: </span><span style="color: white;">You know why sky is so beautiful? I dont no, Why? Because your heart is there</span></p>
+            <p><span style="color: black;">Writing Quotes: </span><span style="color: white;">You know why sky is so beautiful? I dont know, Why? Because your heart is there</span></p>
             <p><span style="color: black;">Gardening: </span><span style="color: white;">It's one of my responsible to taking care of nature</span></p>
             <p><span style="color: black;">Brain Games: </span><span style="color: white;">Pixin, Looping, Waterfall, Puzzles</span></p>
           </ul>
@@ -353,11 +317,7 @@
         return  ` `;
     }
   }
-
-
-
-
+  
 </script>
-
 </body>
 </html>
