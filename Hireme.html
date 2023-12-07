@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,6 +63,7 @@
       0% {
         transform: translateY(0);
       }
+
       100% {
         transform: translateY(-15px);
       }
@@ -80,7 +82,8 @@
     }
 
     #buttonsContainer {
-      display: none;
+      display: none; /* Initially hide the buttons */
+      flex-wrap: wrap;
       margin-top: 20px;
     }
 
@@ -93,19 +96,29 @@
       border: none;
       border-radius: 5px;
       margin-top: 10px;
-      margin-right: 10px; /* Add margin-right for spacing */
+      margin-right: 10px;
       transition: background-color 0.3s;
     }
 
     #skillsButton {
-      background-color: #2ecc71; /* Initial color for Skills & Interests button */
+      background-color: #2ecc71;
     }
 
     .option-button:last-child {
-      margin-right: 0; /* Remove margin-right for the last button to avoid extra spacing */
+      margin-right: 0;
     }
+
     .option-button:hover {
       background-color: #27ae60;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .option-button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin-top: 10px;
+        margin-right: 0;
+      }
     }
 
     #content {
@@ -120,7 +133,7 @@
     }
 
     #contactSection {
-      margin-top:30px;
+      margin-top: 30px;
     }
 
     #emailLink {
@@ -130,8 +143,41 @@
       font-size: 20px;
       margin-top: 10px;
     }
+
+    @media only screen and (max-width: 600px) {
+      #hireMeText {
+        font-size: 36px;
+      }
+
+      .animated-letter {
+        margin-right: 2px;
+      }
+
+      #revealButton {
+        font-size: 16px;
+        padding: 8px 16px;
+      }
+
+      .option-button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      #content {
+        margin-top: 10px;
+      }
+
+      #thankYouMessage {
+        font-size: 16px;
+      }
+
+      #contactSection {
+        margin-top: 15px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <div id="hireMeText">
@@ -142,6 +188,10 @@
   <span class="animated-letter letter5" style="color: #2ecc71;"> </span>
   <span class="animated-letter letter6" style="color: #ffff00;">M</span>
   <span class="animated-letter letter1" style="color: #3498db;">e</span>
+</div>
+
+<div id="welcomeMessage">
+  <p>Welcome to my profile! I'm excited to share my skills and experiences with you. Click the "Reveal" button to get started.</p>
 </div>
 
 <button id="revealButton" onclick="revealButtons()">Reveal</button>
@@ -166,20 +216,20 @@
 <div id="contactSection">
   <p style="color:#db3498;">For inquiries, you can contact me at:</p>
   <p style="text-align:center; color: red;">
-    *  <a style="color: darkmagenta;" href="tel:+919025867107">Mobile</a>
+    * <a style="color: darkmagenta;" href="tel:+919025867107">Mobile</a>
     *  <a style="color: darkmagenta;" href="mailto:shobanashobana197@gmail.com">shobanashobana197@gmail.com</a>
     *  <a style="color: darkmagenta;" href="https://www.linkedin.com/in/shobana27/">linkedin</a>
-    *  <a style="color: darkmagenta;" href="https://shobanashobana1971.wixsite.com/thebravegirl/">Website</a>
     *  <a style="color: darkmagenta;" href="https://www.google.com/maps/place/puducherry+location/data=!4m2!3m1!1s0x3a5361ab8e49cfcf:0xcc6bd326d2f0b04e?sa=X&ved=2ahUKEwiujPyFkfOCAxXufGwGHXCdCnUQ8gF6BAgSEAA">Puducherry, India</a>
   </p>
 </div>
 
 <script>
-  
   let skillsRevealed = false;
+
   function revealButtons() {
     document.getElementById('buttonsContainer').style.display = 'flex';
     document.getElementById('revealButton').style.display = 'none';
+    document.getElementById('welcomeMessage').style.display = 'none'; // Hide the welcome message
   }
 
   function revealSkills() {
@@ -196,9 +246,7 @@
         <button class="option-button" onclick="revealContent('Hobbies')">Hobbies</button>
       `;
       skillsRevealed = true; // Update the variable to indicate that buttons are revealed
-
     }
-
   }
 
   function revealContent(contentType) {
@@ -214,16 +262,7 @@
           <ul style="text-align: left;">
             <h3 style="color: pink;">INTEGRA SOFTWARE SERVICES</h3>
             <h4 style="color: #dbcb34;">PROGRAMMER TRAINEE <p style="font-size: 10px; color: black;"> Puducherry, India [Sep 2021- Oct 2023]</p></h4>
-            <p>• I bring a wealth of experience with over 2.2 years of dedicated work in Python and Perl development.</p>
-            <p>• During my journey, I've crafted robust web applications, contributing to a 20% boost in system efficiency.</p>
-            <p>• Implemented data analytics scripts, slashing processing time by 30%, and ensuring data accuracy.</p>
-            <p>• Collaborated seamlessly with cross-functional teams to design and implement RESTful APIs, enhancing communication between modules.</p>
-            <p>• Utilized Python frameworks, such as Django and Flask, to create scalable and maintainable software architectures.</p>
-            <p>• Spearheaded the adoption of best practices in code reviews, resulting in a 15% increase in code quality.</p>
-            <p>• Proficient in Perl scripting, I've streamlined automation tasks, reducing manual workload and improving overall efficiency.</p>
-            <p>• Designed and maintained database schemas, optimizing queries for improved application performance.</p>
-            <p>• Embracing agile development methodologies, I ensure the timely delivery of high-quality software solutions.</p>
-            <p>• Worked in tandem with QA teams, actively identifying and addressing software defects, contributing to a 25% reduction in post-release issues.</p>
+            <p>As a strategic Python virtuoso with 2.2 years of hands-on prowess, I am adept at seamlessly sculpting cutting-edge solutions. As a visionary collaborator, I bring impact to the forefront of tech evolution, consistently delivering results that resonate. I am eager to contribute my skills and drive to a dynamic team and invite opportunities for challenging and rewarding roles in your esteemed organization.</p>
           </ul>
         `;
 
@@ -255,26 +294,18 @@
          <ul style="text-align: left;">
           <h2 style="color: #dbcb34;">iPubedit 3.O</h2>
           <p>• iPubedit3.0, the pinnacle of document management innovation. Utilizing Python, Perl, and AnyStyle, this software ensures unparalleled versatility in document handling.</p>
-          <p>• Integrated seamlessly with MongoDB and MySQL, iPubedit3.0 guarantees robust and efficient data management.</p>
-          <p>• Enhanced with HTML, CSS, and JavaScript, the user interface is both intuitive and visually appealing, ensuring a seamless user experience.</p>
-          <p>• Powered by sophisticated Natural Language Processing (NLP), iPubedit3.0 excels in word document to final XML conversion, setting a new standard in precision.</p>
           <p>• Additionally, the system seamlessly generates final outputs in both PDF and XML formats, providing customers with a comprehensive solution for their document management needs.</p>
          </ul>
          <ul style="text-align: left;">
           <h2 style="color: #dbcb34;">User Template API</h2>
-           <p>• created a simple REST API to store user details and user template details.</p>
+           <p>• created a simple REST API to store user details and user template details it perform CRUD operations.</p>
            <p>• Used JWT token for accessing use authorization and MongoDB for retrieve user details and templates.</p>
-           <p>• to build a user module so one user can't access another user's resources, and it also supports get, put, post, and delete functions (CRUD operations).</p>
          </ul>
          <ul style="text-align: left;">
           <h2 style="color: #dbcb34;">Image Processing</h2>
-           <p>• Embarking on the realm of image processing, my recent project showcases the power of OpenCV and Tesseract.</p>
            <p>• Using Python, I've developed a dynamic automation tool that seamlessly alters DPI, changes font names, renames images, adjusts font sizes, and fine-tunes contrast in RGB images.</p>
-           <p>• OpenCV provides the backbone for robust image manipulation, ensuring precision in tasks such as DPI modification and contrast enhancement. </p>
-           <p>• Additionally, Tesseract, a powerful OCR engine, is employed to extract intricate details like font names and sizes from images, enriching the processing capabilities.</p>
-         </ul>
+          </ul>
        `;
-
       case 'TechnicalSkills':
         return  `
           <ul style="text-align:left;">
@@ -317,7 +348,8 @@
         return  ` `;
     }
   }
-  
+
 </script>
+
 </body>
 </html>
