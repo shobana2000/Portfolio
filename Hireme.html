@@ -7,17 +7,17 @@
   <title>SHOBANA B</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #3498db;
+      font-family: 'Cambria';
+      background-color: black;
       color: #fff;
-      text-align: center;
+      text-align: top;
       padding: 20px;
       margin: 0;
-      height: 100vh;
+      min-height: 100vh; /* Ensure a minimum height of 100% of the viewport height */
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: center; /* Remove this line */
     }
 
     #hireMeText {
@@ -155,7 +155,11 @@
       margin-top: 10px;
     }
 
-    @media only screen and (max-width: 600px) {
+   @media only screen and (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
       #hireMeText {
         font-size: 36px;
       }
@@ -164,10 +168,7 @@
         margin-right: 2px;
       }
 
-      #revealButton {
-        font-size: 16px;
-        padding: 8px 16px;
-      }
+      #revealButton,
       #Resume1 {
         font-size: 16px;
         padding: 8px 16px;
@@ -190,6 +191,7 @@
         margin-top: 15px;
       }
     }
+
   </style>
 </head>
 
@@ -208,17 +210,21 @@
 </div>
 
 <div id="welcomeMessage">
-  <p>Bienvenue to my profile! I'm excited to share my skills and experiences with you. Click the "Reveal" button to get started.</p>
+  <p style="font-size: 20px;">Bienvenue to my profile! I'm excited to share my skills and experiences with you. Click the "REVEAL" button to get started.</p>
 </div>
 
 <button id="revealButton" onclick="revealButtons()">Reveal</button>
 
 <div id="buttonsContainer">
-  <button class="option-button" onclick="revealContent('Experience')">Experience</button>
-  <button class="option-button" onclick="revealContent('Education')">Education</button>
-  <button class="option-button" onclick="revealContent('Certification')">Certification</button>
-  <button class="option-button" onclick="revealContent('Projects')">Projects</button>
-  <button class="option-button" id="skillsButton" onclick="revealSkills()">Skills & Interests</button>
+    <button class="option-button" onclick="revealContent('Objective')">Objective</button>
+    <button class="option-button" onclick="revealContent('Experience')">Experience</button>
+    <button class="option-button" onclick="revealContent('Education')">Education</button>
+    <button class="option-button" onclick="revealContent('Projects')">Projects</button>
+    <button class="option-button" onclick="revealContent('Certification')">Certification</button>
+    <button class="option-button" onclick="revealContent('Skills')">Technical Skills</button>
+    <button class="option-button" onclick="revealContent('Activities')">Activities</button>
+    <button class="option-button" onclick="revealContent('Languages')">Languages Known</button>
+    <button class="option-button" onclick="revealContent('Hobbies')">Hobbies</button>
 </div>
 
 <div id="content">
@@ -234,41 +240,22 @@
     RESUME...
 </button>
 
-  
 <div id="contactSection">
-  <p style="color:#db3498;">For inquiries, you can contact me at:</p>
+  <p style="color:aqua; text-align:center;">For inquiries, you can contact me at:</p>
   <p style="text-align:center; color: red;">
-    * <a style="color: darkmagenta;" href="tel:+919025867107">Mobile</a>
-    *  <a style="color: darkmagenta;" href="mailto:shobanashobana197@gmail.com">shobanashobana197@gmail.com</a>
-    *  <a style="color: darkmagenta;" href="https://www.linkedin.com/in/shobana27/">linkedin</a>
-    *  <a style="color: darkmagenta;" href="https://www.google.com/maps/place/puducherry+location/data=!4m2!3m1!1s0x3a5361ab8e49cfcf:0xcc6bd326d2f0b04e?sa=X&ved=2ahUKEwiujPyFkfOCAxXufGwGHXCdCnUQ8gF6BAgSEAA">Puducherry, India</a>
+    *&nbsp;<a style="color: indianred;" href="tel:+919025867107">Mobile</a>&nbsp;
+    *&nbsp;<a style="color: indianred;" href="mailto:shobanashobana197@gmail.com">shobanashobana197@gmail.com</a>&nbsp;
+    *&nbsp;<a style="color: indianred;" href="https://www.linkedin.com/in/shobana27/">linkedin</a>&nbsp;
+    *&nbsp;<a style="color: indianred;" href="https://www.google.com/maps/place/puducherry+location/data=!4m2!3m1!1s0x3a5361ab8e49cfcf:0xcc6bd326d2f0b04e?sa=X&ved=2ahUKEwiujPyFkfOCAxXufGwGHXCdCnUQ8gF6BAgSEAA">Puducherry, India</a>
   </p>
 </div>
 
 <script>
   let skillsRevealed = false;
-
   function revealButtons() {
     document.getElementById('buttonsContainer').style.display = 'flex';
     document.getElementById('revealButton').style.display = 'none';
     document.getElementById('welcomeMessage').style.display = 'none'; // Hide the welcome message
-  }
-
-  function revealSkills() {
-    const skillsContainer = document.getElementById('skillsContainer');
-    const skillsButton = document.getElementById('skillsButton');
-
-    if (!skillsRevealed) {
-      skillsButton.style.backgroundColor = '#e74c3c';
-      // Add Skills & Interests buttons only if not revealed before
-      document.getElementById('buttonsContainer').innerHTML += `
-        <button class="option-button" onclick="revealContent('TechnicalSkills')">Technical</button>
-        <button class="option-button" onclick="revealContent('Activities')">Activities</button>
-        <button class="option-button" onclick="revealContent('Languages')">Languages</button>
-        <button class="option-button" onclick="revealContent('Hobbies')">Hobbies</button>
-      `;
-      skillsRevealed = true; // Update the variable to indicate that buttons are revealed
-    }
   }
 
   function revealContent(contentType) {
@@ -279,24 +266,43 @@
   function getContent(contentType) {
     // Return content based on the user's selection
     switch (contentType) {
+      case 'Objective':
+        return `
+          <ul style="text-align: left;">
+            <li>Innovative Python and Perl developer with 2 years of experience, aspiring to contribute to a more unified and connected world.</li>
+            <br/>
+            <li>A creative thinker well-versed in software development and proficient in working with diverse data structures.</li>
+            <br/>
+            <li>Eager to leverage programming expertise to drive technological advancements and enhance global connectivity.</li>
+          </ul>
+        `;
       case 'Experience':
         return `
           <ul style="text-align: left;">
-            <h3 style="color: pink;">INTEGRA SOFTWARE SERVICES</h3>
-            <h4 style="color: #dbcb34;">PROGRAMMER TRAINEE <p style="font-size: 10px; color: black;"> Puducherry, India [Sep 2021- Oct 2023]</p></h4>
-            <p>As a strategic Python virtuoso with 2.2 years of hands-on prowess, I am adept at seamlessly sculpting cutting-edge solutions. As a visionary collaborator, I bring impact to the forefront of tech evolution, consistently delivering results that resonate. I am eager to contribute my skills and drive to a dynamic team and invite opportunities for challenging and rewarding roles in your esteemed organization.</p>
-          </ul>
+            <h2 style="color: pink;">INTEGRA SOFTWARE SERVICES</h3>
+            <h3 style="color: #dbcb34;">PROGRAMMER TRAINEE <p style="font-size: 15px; color: darksalmon;"> Puducherry, India [Sep 2021- Oct 2023]</p></h4>
+            <li>Developed and implemented Python scripts to automate data analysis processes, resulting in a 50% reduction in time spent on manual data manipulation tasks.</li>
+            <br/>
+            <li>Led the successful implementation of RESTful APIs, resulting in a 75% increase in data transfer efficiency and a 20% decrease in system downtime.</li>
+            <br/>
+            <li>Collaborated with cross-functional teams to design and develop a Python-based tool that improved the efficiency of data processing tasks by 75%.</li>
+            <br/>
+            <li>Optimized database schemas resulting in a 30% increase in application performance, leading to improved user experience and satisfaction</li>
+            <br/>
+            <li>Made informed technical decisions to address business challenges effectively</li>
+            <br/>
+            <li>Assisted the team in developing project requirements and provided training for junior members.</li>
         `;
 
       case 'Education':
         return `
           <ul style="text-align: center;">
-            <h3 style="color: Black;">ANNA UNIVERSITY<p style="font-size: 10px; color: black;"> Tindivanam, India [Sep 2017- Sep 2021]</p></h3>
-            <p> successfully completed my undergraduate studies, earning a Bachelor of Engineering in Computer Science and Engineering with a remarkable GPA of 7.8</p>
+            <h2 style="color: orange;">ANNA UNIVERSITY<p style="font-size: 15px; color: darksalmon;"> Tindivanam, India [Sep 2017- Sep 2021]</p></h3>
+            <p> Successfully completed my undergraduate studies, earning a Bachelor of Engineering in Computer Science and Engineering with a remarkable GPA of 7.8</p>
           </ul>
           <br/>
           <ul style="text-align: center;">
-            <h3 style="color: Black;">SRI VDS JAIN HIGHER SECONDARY SCHOOL<p style="font-size: 10px; color: black;"> Tiruvannamalai, India</p></h3>
+            <h2 style="color: orange;">SRI VDS JAIN HIGHER SECONDARY SCHOOL<p style="font-size: 15px; color: darksalmon;"> Tiruvannamalai, India [Jun 2016 - Mar 2017]</p></h3>
             <p>I excelled in my academic journey, securing the first position in my class throughout. In my Higher Secondary (HSC), I achieved an outstanding score of 87%, showcasing my commitment to excellence.</p>
             <p>Similarly, in my Secondary School Leaving Certificate (SSLC), I attained an impressive score of 83%, maintaining a consistent track record of academic success.</p>
           </ul>
@@ -304,10 +310,10 @@
       case 'Certification':
         return  `
           <ul style="text-align: left;">
-            <li><span style="color: white;">Gen AI</span><span style="color: black;"> - Google Cloud</span></li></br>
-            <li><span style="color: white;">PYTHON</span><span style="color: black;"> - GUVI</span></li></br>
-            <li><span style="color: white;">Robotic Process Automation</span><span style="color: black;"> - GUVI</span></li></br>
-            <li><span style="color: white;">Artificial Intelligence</span><span style="color: black;"> - TCSiON</span></li></br>
+            <li><span style="color: white;">Gen AI</span><span style="color: darksalmon;"> - Google Cloud</span></li></br>
+            <li><span style="color: white;">PYTHON</span><span style="color: darksalmon;"> - GUVI</span></li></br>
+            <li><span style="color: white;">Robotic Process Automation</span><span style="color: darksalmon;"> - GUVI</span></li></br>
+            <li><span style="color: white;">Artificial Intelligence</span><span style="color: darksalmon;"> - TCSiON</span></li></br>
           </ul>
        `;
       case 'Projects':
@@ -332,52 +338,51 @@
            <p>• Using Python, I've developed a dynamic automation tool that seamlessly alters DPI, changes font names, renames images, adjusts font sizes, and fine-tunes contrast in RGB images.</p>
           </ul>
        `;
-      case 'TechnicalSkills':
+      case 'Skills':
         return  `
           <ul style="text-align:left;">
-            <p><span style="color: black;">Programming skills:  </span><span style="color: white;">Expertise in Python, Perl, JavaScript using  backend development</span></p>
-            <p><span style="color: black;">Database:  </span><span style="color: white;">Solid working knowledge of RDMS like MySQL, NoSQL, Pl/SQL</span></p>
-            <p><span style="color: black;">Webservice:  </span><span style="color: white;">Solid knowledge of AWS S3, EC2, RDS, Lambda, CloudWatch</span></p>
-            <p><span style="color: black;">Frameworks:  </span><span style="color: white;">Flask, Django, FastAPI</span></p>
-            <p><span style="color: black;">Webdevelopment:  </span><span style="color: white;">HTML5, CSS3, JSON, JS/jQuery, RestAPI Postman</span></p>
-            <p><span style="color: black;">Fundamental Awareness: </span><span style="color: white;">Java, C, C++</span></p>
-            <p><span style="color: black;">Other Skills:  </span><span style="color: white;">AJAX, XML, Schema, DTD</span></p>
-            <p><span style="color: black;">Version control:  </span><span style="color: white;">Git, Docker</span></p>
+            <p><span style="color: darksalmon;">Programming skills:  </span><span style="color: white;">Expertise in Python, Perl, JavaScript using  backend development</span></p>
+            <p><span style="color: darksalmon;">Database:  </span><span style="color: white;">Solid working knowledge of RDMS like MySQL, NoSQL, Pl/SQL</span></p>
+            <p><span style="color: darksalmon;">Webservice:  </span><span style="color: white;">Solid knowledge of AWS S3, EC2, RDS, Lambda, CloudWatch</span></p>
+            <p><span style="color: darksalmon;">Frameworks:  </span><span style="color: white;">Flask, Django, FastAPI</span></p>
+            <p><span style="color: darksalmon;">Webdevelopment:  </span><span style="color: white;">HTML5, CSS3, JSON, JS/jQuery, RestAPI Postman</span></p>
+            <p><span style="color: darksalmon;">Fundamental Awareness: </span><span style="color: white;">Java, C, C++</span></p>
+            <p><span style="color: darksalmon;">Other Skills:  </span><span style="color: white;">AJAX, XML, Schema, DTD</span></p>
+            <p><span style="color: darksalmon;">Version control:  </span><span style="color: white;">Git, Docker</span></p>
           </ul>
         `;
       case 'Activities':
         return  `
           <ul style="text-align: left;">
-            <p>• I participated in React JS workshop conducted by Shaastra at IIT. </p>
-            <p>• I participated in an ANDROID workshop by Uniq Technologies.</p>
-            <p>• I participated in 9th International Conference on Contemporary Engineering and Technology 2021.</p>
-            <p>• I received the GUVI Step into Robotic Process Automation certificate of achievement at the 2020 RPA Skill-A-Thon.</p>
+            <p>• Participated in React JS workshop conducted by Shaastra at IIT. </p>
+            <p>• Participated in an ANDROID workshop by Uniq Technologies.</p>
+            <p>• Participated in 9th International Conference on Contemporary Engineering and Technology 2021.</p>
+            <p>• Received the GUVI Step into Robotic Process Automation certificate of achievement at the 2020 RPA Skill-A-Thon.</p>
          </ul>
         `;
       case 'Languages':
         return  `
           <ul style="text-align: left;">
-            <p><span style="color: black;">ENGLISH </span>-><span style="color: white;">Professional</span></p>
-            <p><span style="color: black;">TAMIL </span>-><span style="color: white;">Native</span></p>
-            <p><span style="color: black;">HINDI </span>-><span style="color: white;">Conversational</span></p>
-            <p><span style="color: black;">FRENCH </span>-><span style="color: white;">Beginner</span></p>
+            <p><span style="color: magenta;">ENGLISH </span>-><span style="color: white;">Professional</span></p>
+            <p><span style="color: magenta;">TAMIL </span>-><span style="color: white;">Native</span></p>
+            <p><span style="color: magenta;">HINDI </span>-><span style="color: white;">Conversational</span></p>
+            <p><span style="color: magenta;">FRENCH </span>-><span style="color: white;">Beginner</span></p>
           </ul>
         `;
       case 'Hobbies':
         return  `
           <ul style="text-align: left;">
-            <p><span style="color: black;">Duolingo: </span><span style="color: white;">Learning new languages</span></p>
-            <p><span style="color: black;">Writing Quotes: </span><span style="color: white;">In the dance of words, I find my rhythm; in the tapestry of quotes, I paint my story</span></p>
-            <p><span style="color: black;">Gardening: </span><span style="color: white;">Sustainable living is give you positive energy when you are alone</span></p>
-            <p><span style="color: black;">Brain Games: </span><span style="color: white;">Pixin, Looping, Waterfall, Puzzles</span></p>
+            <p><span style="color: darksalmon;">Duolingo: </span><span style="color: white;">Learning new languages</span></p>
+            <p><span style="color: darksalmon;">Writing Quotes: </span><span style="color: white;">In the dance of words, I find my rhythm; in the tapestry of quotes, I paint my story</span></p>
+            <p><span style="color: darksalmon;">Gardening: </span><span style="color: white;">Sustainable living is give you positive energy when you are alone</span></p>
+            <p><span style="color: darksalmon;">Brain Games: </span><span style="color: white;">Pixin, Looping, Waterfall, Puzzles</span></p>
           </ul>
         `;
       default:
         return  ` `;
     }
   }
-
 </script>
-
+  
 </body>
 </html>
