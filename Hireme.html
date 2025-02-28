@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="p:domain_verify" content="a896b68816df202fccbadcece29af85a"/>
   <title>SHOBANA B</title>
   <style>
@@ -14,11 +14,11 @@
       text-align: top;
       padding: 20px;
       margin: 0;
-      min-height: 100vh; /* Ensure a minimum height of 100% of the viewport height */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; /* Remove this line */
+      align-items: center;
     }
 
     #hireMeText {
@@ -40,7 +40,7 @@
       animation-delay: 0s;
     }
 
-    letter2 {
+    .letter2 {
       animation-delay: 0.2s;
     }
 
@@ -57,31 +57,19 @@
     }
 
     .letter6 {
-      animation-delay: 0.1s;
+      animation-delay: 1s;
     }
 
     @keyframes jumpAnimation {
       0% {
         transform: translateY(0);
       }
-
       100% {
         transform: translateY(-15px);
       }
     }
 
-    #revealButton {
-      cursor: pointer;
-      background-color: #e74c3c;
-      color: #fff;
-      padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 5px;
-      margin-top: 20px;
-      transition: background-color 0.3s;
-    }
-    #Resume1 {
+    #revealButton, #resumeButton {
       cursor: pointer;
       background-color: #e74c3c;
       color: #fff;
@@ -94,7 +82,7 @@
     }
 
     #buttonsContainer {
-      display: none; /* Initially hide the buttons */
+      display: none;
       flex-wrap: wrap;
       margin-top: 20px;
     }
@@ -112,10 +100,6 @@
       transition: background-color 0.3s;
     }
 
-    #skillsButton {
-      background-color: #2ecc71;
-    }
-
     .option-button:last-child {
       margin-right: 0;
     }
@@ -129,7 +113,6 @@
         font-size: 14px;
         padding: 8px 16px;
         margin-top: 10px;
-        margin-right: 0;
       }
     }
 
@@ -138,14 +121,9 @@
       display: none;
     }
 
-    #thankYouMessage {
-      margin-top: 20px;
-      font-size: 20px;
-      color: #2ecc71;
-    }
-
     #contactSection {
       margin-top: 30px;
+      text-align: center;
     }
 
     #emailLink {
@@ -156,7 +134,7 @@
       margin-top: 10px;
     }
 
-   @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 600px) {
       body {
         padding: 10px;
       }
@@ -169,8 +147,7 @@
         margin-right: 2px;
       }
 
-      #revealButton,
-      #Resume1 {
+      #revealButton, #resumeButton {
         font-size: 16px;
         padding: 8px 16px;
       }
@@ -184,39 +161,32 @@
         margin-top: 10px;
       }
 
-      #thankYouMessage {
-        font-size: 16px;
-      }
-
       #contactSection {
         margin-top: 15px;
       }
     }
-
   </style>
 </head>
 
-<body>         
-<div id="hireMeText">
-  <span class="animated-letter letter1" style="color: #FFFF00;">S</span>
-  <span class="animated-letter letter2" style="color: #FFFF00;">H</span>
-  <span class="animated-letter letter3" style="color: #FFFF00;">O</span>
-  <span class="animated-letter letter4" style="color: #FFFF00;">B</span>
-  <span class="animated-letter letter5" style="color: #FFFF00;">A</span>
-  <span class="animated-letter letter2" style="color: #FFFF00;">N</span>
-  <span class="animated-letter letter6" style="color: #FFFF00;">A</span>
-  <span class="animated-letter letter5" style="color: #2ecc71;">&nbsp;</span>
-  <span class="animated-letter letter1" style="color: #FF9800;">B</span>
-</div>
+<body>
+  <div id="hireMeText">
+    <span class="animated-letter letter1" style="color: #FFFF00;">S</span>
+    <span class="animated-letter letter2" style="color: #FFFF00;">H</span>
+    <span class="animated-letter letter3" style="color: #FFFF00;">O</span>
+    <span class="animated-letter letter4" style="color: #FFFF00;">B</span>
+    <span class="animated-letter letter5" style="color: #FFFF00;">A</span>
+    <span class="animated-letter letter2" style="color: #FFFF00;">N</span>
+    <span class="animated-letter letter6" style="color: #FFFF00;">A</span>
+    <span class="animated-letter letter5" style="color: #2ecc71;">&nbsp;</span>
+    <span class="animated-letter letter1" style="color: #FF9800;">B</span>
+  </div>
 
-<div id="welcomeMessage">
-  <p style="font-size: 20px;">Bienvenue to my profile! I'm excited to share my skills and experiences with you. Click the "REVEAL" button to get started.</p>
-</div>
-<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="shobana27" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/shobana27?trk=profile-badge">Shobana B</a></div>
-              
-<button id="revealButton" onclick="revealButtons()">Reveal</button>
+  <div id="welcomeMessage">
+    <p style="font-size: 20px;">Bienvenue to my profile! I'm excited to share my skills and experiences with you. Click the "<a style="color: #E74C3C;">REVEAL</a>" button to get started.</p>
+  </div>
+  <button id="revealButton" onclick="revealButtons()">Reveal</button>
 
-<div id="buttonsContainer">
+  <div id="buttonsContainer">
     <button class="option-button" onclick="revealContent('Objective')">Objective</button>
     <button class="option-button" onclick="revealContent('Experience')">Experience</button>
     <button class="option-button" onclick="revealContent('Education')">Education</button>
@@ -226,164 +196,166 @@
     <button class="option-button" onclick="revealContent('Activities')">Activities</button>
     <button class="option-button" onclick="revealContent('Languages')">Languages Known</button>
     <button class="option-button" onclick="revealContent('Hobbies')">Hobbies</button>
-</div>
+  </div>
 
-<div id="content">
-  <!-- Content sections will be dynamically shown here based on user selection -->
-</div>
+  <div id="content">
+    <!-- Content sections will be dynamically shown here based on user selection -->
+  </div>
 
-<div id="thankYouMessage">
-  <!-- Thank You Message -->
-  <p>🎉 Thank you for considering my profile. Looking forward to the opportunity to work together! 🚀</p>
-</div>
+  <div id="contactSection">
+    <p style="color:#2ecc71; margin-top: 20px; font-size: 20px;">🎉 Thank you for considering my profile. Looking forward to the opportunity to work together! 🚀</p>
+    <p style="color:aqua;">For inquiries, you can contact me at:</p>
+    <p style="color: red;">
+      *&nbsp;<a style="color: indianred;" href="mailto:shobanashobana197@gmail.com">Email</a>&nbsp;
+      *&nbsp;<a style="color: indianred;" href="https://www.linkedin.com/in/shobana27/" target="_blank">linkedin</a>&nbsp;
+      *&nbsp;<a style="color: indianred;" href="https://www.google.com/maps/place/Chennai,+Tamil+Nadu,+India/@13.0827,80.2707,12z/" target="_blank">Chennai, India</a>
+    </p>
+  </div>
 
- <button id="Resume1" style="color: Yellow; background-color: transparent; border: none; cursor: pointer;" onclick="window.location.href='https://docs.google.com/presentation/d/1BBl7xwx3jxYNEZZK0Z22j52TfkzfqVVlE1EXGWgCIFY/edit?usp=sharing'">
-    RESUME...
-</button>
-
-<div id="contactSection">
-  <p style="color:aqua; text-align:center;">For inquiries, you can contact me at:</p>
-  <p style="text-align:center; color: red;">
-    *&nbsp;<a style="color: indianred;" href="tel:+919025867107">Mobile</a>&nbsp;
-    *&nbsp;<a style="color: indianred;" href="mailto:shobanashobana197@gmail.com">shobanashobana197@gmail.com</a>&nbsp;
-    *&nbsp;<a style="color: indianred;" href="https://www.linkedin.com/in/shobana27/">linkedin</a>&nbsp;
-    *&nbsp;<a style="color: indianred;" href="https://www.google.com/maps/place/puducherry+location/data=!4m2!3m1!1s0x3a5361ab8e49cfcf:0xcc6bd326d2f0b04e?sa=X&ved=2ahUKEwiujPyFkfOCAxXufGwGHXCdCnUQ8gF6BAgSEAA">Puducherry, India</a>
-  </p>
-</div>
-
-<script>
-  let skillsRevealed = false;
-  function revealButtons() {
-    document.getElementById('buttonsContainer').style.display = 'flex';
-    document.getElementById('revealButton').style.display = 'none';
-    document.getElementById('welcomeMessage').style.display = 'none'; // Hide the welcome message
-  }
-
-  function revealContent(contentType) {
-    document.getElementById('content').innerHTML = getContent(contentType);
-    document.getElementById('content').style.display = 'block';
-  }
-
-  function getContent(contentType) {
-    // Return content based on the user's selection
-    switch (contentType) {
-      case 'Objective':
-        return `
-          <ul style="text-align: left;">
-            <li>Innovative Python and Perl developer with 2 years of experience, aspiring to contribute to a more unified and connected world.</li>
-            <br/>
-            <li>A creative thinker well-versed in software development and proficient in working with diverse data structures.</li>
-            <br/>
-            <li>Eager to leverage programming expertise to drive technological advancements and enhance global connectivity.</li>
-          </ul>
-        `;
-      case 'Experience':
-        return `
-          <ul style="text-align: left;">
-            <h2 style="color: pink;">INTEGRA SOFTWARE SERVICES</h3>
-            <h3 style="color: #dbcb34;">PROGRAMMER TRAINEE <p style="font-size: 15px; color: darksalmon;"> Puducherry, India [Sep 2021- Oct 2023]</p></h4>
-            <li>Developed and implemented Python scripts to automate data analysis processes, resulting in a 50% reduction in time spent on manual data manipulation tasks.</li>
-            <br/>
-            <li>Led the successful implementation of RESTful APIs, resulting in a 75% increase in data transfer efficiency and a 20% decrease in system downtime.</li>
-            <br/>
-            <li>Collaborated with cross-functional teams to design and develop a Python-based tool that improved the efficiency of data processing tasks by 75%.</li>
-            <br/>
-            <li>Optimized database schemas resulting in a 30% increase in application performance, leading to improved user experience and satisfaction</li>
-            <br/>
-            <li>Made informed technical decisions to address business challenges effectively</li>
-            <br/>
-            <li>Assisted the team in developing project requirements and provided training for junior members.</li>
-        `;
-
-      case 'Education':
-        return `
-          <ul style="text-align: center;">
-            <h2 style="color: orange;">ANNA UNIVERSITY<p style="font-size: 15px; color: darksalmon;"> Tindivanam, India [Sep 2017- Sep 2021]</p></h3>
-            <p> Successfully completed my undergraduate studies, earning a Bachelor of Engineering in Computer Science and Engineering with a remarkable GPA of 7.8</p>
-          </ul>
-          <br/>
-          <ul style="text-align: center;">
-            <h2 style="color: orange;">SRI VDS JAIN HIGHER SECONDARY SCHOOL<p style="font-size: 15px; color: darksalmon;"> Tiruvannamalai, India [Jun 2016 - Mar 2017]</p></h3>
-            <p>I excelled in my academic journey, securing the first position in my class throughout. In my Higher Secondary (HSC), I achieved an outstanding score of 87%, showcasing my commitment to excellence.</p>
-            <p>Similarly, in my Secondary School Leaving Certificate (SSLC), I attained an impressive score of 83%, maintaining a consistent track record of academic success.</p>
-          </ul>
-        `;
-      case 'Certification':
-        return  `
-          <ul style="text-align: left;">
-            <li><span style="color: white;">Gen AI</span><span style="color: darksalmon;"> - Google Cloud</span></li></br>
-            <li><span style="color: white;">PYTHON</span><span style="color: darksalmon;"> - GUVI</span></li></br>
-            <li><span style="color: white;">Robotic Process Automation</span><span style="color: darksalmon;"> - GUVI</span></li></br>
-            <li><span style="color: white;">Artificial Intelligence</span><span style="color: darksalmon;"> - TCSiON</span></li></br>
-          </ul>
-       `;
-      case 'Projects':
-        return  `
-         <ul style="text-align: left;">
-          <h2 style="color: #dbcb34;">Sentiment Analysis</h2>
-          <p>• Developed a robust data preprocessing pipeline for Amazon Product Data in the electronics category, utilizing the Text Blob library.</p>
-          <p>• Applied machine learning models, including linear regression and random forest, for predicting user ratings based on metadata.</p>
-         </ul>
-         <ul style="text-align: left;">
-          <h2 style="color: #dbcb34;">iPubedit 3.O</h2>
-          <p>• iPubedit3.0, the pinnacle of document management innovation. Utilizing Python, Perl, and AnyStyle, this software ensures unparalleled versatility in document handling.</p>
-          <p>• Additionally, the system seamlessly generates final outputs in both PDF and XML formats, providing customers with a comprehensive solution for their document management needs.</p>
-         </ul>
-         <ul style="text-align: left;">
-          <h2 style="color: #dbcb34;">SecureUser API</h2>
-           <p>• created a simple REST API to store user details and user template details it perform CRUD operations.</p>
-           <p>• Used JWT token for accessing use authorization and MongoDB for retrieve user details and templates.</p>
-         </ul>
-         <ul style="text-align: left;">
-          <h2 style="color: #dbcb34;">Image Processing</h2>
-           <p>• Using Python, I've developed a dynamic automation tool that seamlessly alters DPI, changes font names, renames images, adjusts font sizes, and fine-tunes contrast in RGB images.</p>
-          </ul>
-       `;
-      case 'Skills':
-        return  `
-          <ul style="text-align:left;">
-            <p><span style="color: darksalmon;">Programming skills:  </span><span style="color: white;">Expertise in Python, Perl, JavaScript using  backend development</span></p>
-            <p><span style="color: darksalmon;">Database:  </span><span style="color: white;">Solid working knowledge of RDMS like MySQL, NoSQL, Pl/SQL</span></p>
-            <p><span style="color: darksalmon;">Webservice:  </span><span style="color: white;">Solid knowledge of AWS S3, EC2, RDS, Lambda, CloudWatch</span></p>
-            <p><span style="color: darksalmon;">Frameworks:  </span><span style="color: white;">Flask, Django, FastAPI</span></p>
-            <p><span style="color: darksalmon;">Webdevelopment:  </span><span style="color: white;">HTML5, CSS3, JSON, JS/jQuery, RestAPI Postman</span></p>
-            <p><span style="color: darksalmon;">Fundamental Awareness: </span><span style="color: white;">Java, C, C++</span></p>
-            <p><span style="color: darksalmon;">Other Skills:  </span><span style="color: white;">AJAX, XML, Schema, DTD</span></p>
-            <p><span style="color: darksalmon;">Version control:  </span><span style="color: white;">Git, Docker</span></p>
-          </ul>
-        `;
-      case 'Activities':
-        return  `
-          <ul style="text-align: left;">
-            <p>• Participated in React JS workshop conducted by Shaastra at IIT. </p>
-            <p>• Participated in an ANDROID workshop by Uniq Technologies.</p>
-            <p>• Participated in 9th International Conference on Contemporary Engineering and Technology 2021.</p>
-            <p>• Received the GUVI Step into Robotic Process Automation certificate of achievement at the 2020 RPA Skill-A-Thon.</p>
-         </ul>
-        `;
-      case 'Languages':
-        return  `
-          <ul style="text-align: left;">
-            <p><span style="color: magenta;">ENGLISH </span>-><span style="color: white;">Professional</span></p>
-            <p><span style="color: magenta;">TAMIL </span>-><span style="color: white;">Native</span></p>
-            <p><span style="color: magenta;">HINDI </span>-><span style="color: white;">Conversational</span></p>
-            <p><span style="color: magenta;">FRENCH </span>-><span style="color: white;">Beginner</span></p>
-          </ul>
-        `;
-      case 'Hobbies':
-        return  `
-          <ul style="text-align: left;">
-            <p><span style="color: darksalmon;">Duolingo: </span><span style="color: white;">Learning new languages</span></p>
-            <p><span style="color: darksalmon;">Writing Quotes: </span><span style="color: white;">In the dance of words, I find my rhythm; in the tapestry of quotes, I paint my story</span></p>
-            <p><span style="color: darksalmon;">Gardening: </span><span style="color: white;">Sustainable living is give you positive energy when you are alone</span></p>
-            <p><span style="color: darksalmon;">Brain Games: </span><span style="color: white;">Pixin, Looping, Waterfall, Puzzles</span></p>
-          </ul>
-        `;
-      default:
-        return  ` `;
+  <script>
+    function revealButtons() {
+      document.getElementById('buttonsContainer').style.display = 'flex';
+      document.getElementById('revealButton').style.display = 'none';
+      document.getElementById('welcomeMessage').style.display = 'none';
     }
-  }
-</script>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+    function revealContent(contentType) {
+      document.getElementById('content').innerHTML = getContent(contentType);
+      document.getElementById('content').style.display = 'block';
+    }
+
+    function getContent(contentType) {
+      switch (contentType) {
+        case 'Objective':
+          return `
+            <ul style="text-align: left;">
+              <li>Innovative and results-driven Software Engineer with more than 3 years of experience, aspiring to contribute to a more unified and connected world.</li>
+              <li>Adept at leading stability testing for chipsets in Linux and AArch64 environments utilizing advanced AI and ML models.</li>
+              <li>Skilled in optimizing AI model deployment to reduce resource consumption while maintaining high performance.</li>
+              <li>Integrating Triton Inference Server & Docker containers to facilitate scalable testing environments.</li>
+              <li>A creative thinker well-versed in software development and proficient in working with diverse data structures.</li>
+              <li>Eager to contribute to impactful projects in a dynamic and innovative organization.</li>
+              <li>Committed to leveraging extensive programming expertise and collaborative skills to enhance global connectivity and drive technological advancements.
+            </ul>
+          `;
+        case 'Experience':
+          return `
+            <ul style="text-align: left;">
+              <h2 style="color: pink;">
+                <a style="color: cornflowerblue;" href="https://www.zilogic.com/" target="_blank">Zilogic Systems</a> assigned to
+                <a style="color: cornflowerblue;" href="https://www.qualcomm.com/" target="_blank">Qualcomm</a>, Chennai, India
+              </h2>
+              <h3 style="color: #dbcb34;">Engineer I (Full time/On-site)</h3>
+              <p style="font-size: 15px; color: darksalmon;">18th Jan 2024 (Present) [1 Year]</p>
+              <li>Led stability testing for chipsets in Linux and AArch64 environments</li>
+              <li>utilizing AI and ML models, including LLMs, vLLMs, edge models, and cloud models, to simulate real-world scenarios and identify potential failure points.</li>
+              <li>Tested and validated the performance and robustness of AI models on Qualcomm's hardware, focusing on efficient deployment across both edge and cloud environments.</li>
+              <li>Worked with Qefficient to optimize AI model deployment, reducing resource consumption while maintaining high performance.</li>
+              <li>Integrated Triton Inference Server and Docker containers to facilitate scalable, isolated testing environments for AI model deployment and monitoring.</li>
+              <li>Collaborated with cross-functional teams to ensure seamless integration of AI models across hardware and software systems, improving stability and performance.</li>
+
+              <h2 style="color: pink;"><a style="color: cornflowerblue;" href="https://integranxt.com/">Integra</a> Software Services, Puducherry, India</h2>
+              <h3 style="color: #dbcb34;">Programmer Trainee (Full time/On-site)</h3>
+              <p style="font-size: 15px; color: darksalmon;">Sep 2021- Oct 2023 [2 Years]</p>
+              <li>Developed and implemented Python scripts to automate data analysis processes, resulting in a 50% reduction in time spent on manual data manipulation tasks.</li>
+              <li>Led the successful implementation of RESTful APIs, resulting in a 75% increase in data transfer efficiency and a 20% decrease in system downtime.</li>
+              <li>Collaborated with cross-functional teams to design and develop a Python-based tool that improved the efficiency of data processing tasks by 75%.</li>
+              <li>Optimized database schemas resulting in a 30% increase in application performance, leading to improved user experience and satisfaction.</li>
+              <li>Made informed technical decisions to address business challenges effectively.</li>
+              <li>Assisted the team in developing project requirements and provided training for junior members.</li>
+            </ul>
+          `;
+        case 'Education':
+          return `
+            <ul style="text-align: left;">
+              <h2 style="color: orange;">ANNA UNIVERSITY</h2>
+              <h3 style="font-size: 15px; color: darksalmon;">Tindivanam, India [Sep 2017- Sep 2021]</h3>
+              <li>Successfully completed my undergraduate studies, earning a Bachelor of Engineering in Computer Science and Engineering with a remarkable GPA of 7.8.</li>
+            </ul>
+            <ul style="text-align: left;">
+              <h2 style="color: orange;">SRI VDS JAIN HIGHER SECONDARY SCHOOL</h2>
+              <h3 style="font-size: 15px; color: darksalmon;">Tiruvannamalai, India [Jun 2016 - Mar 2017]</h3>
+              <li>I excelled in my academic journey, securing the first position in my class throughout.</li>
+              <li>In my Higher Secondary (HSC), I achieved an outstanding score of 87%, showcasing my commitment to excellence.</li>
+              <li>Similarly, in my Secondary School Leaving Certificate (SSLC), I attained an impressive score of 83%, maintaining a consistent track record of academic success.</li>
+            </ul>
+          `;
+        case 'Certification':
+          return `
+            <ul style="text-align: left;">
+              <li><span style="color: white;">Gen AI</span><span style="color: darksalmon;"> - Google Cloud</span></li>
+              <li><span style="color: white;">PYTHON</span><span style="color: darksalmon;"> - GUVI</span></li>
+              <li><span style="color: white;">Robotic Process Automation</span><span style="color: darksalmon;"> - GUVI</span></li>
+              <li><span style="color: white;">Artificial Intelligence</span><span style="color: darksalmon;"> - TCSiON</span></li>
+            </ul>
+          `;
+        case 'Projects':
+          return `
+            <ul style="text-align: left;">
+              <h2 style="color: #dbcb34;">Sentiment Analysis</h2>
+              <li>Developed a robust data preprocessing pipeline for Amazon Product Data in the electronics category, utilizing the Text Blob library.</li>
+              <li>Applied machine learning models, including linear regression and random forest, for predicting user ratings based on metadata.</li>
+            </ul>
+            <ul style="text-align: left;">
+              <h2 style="color: #dbcb34;">iPubedit 3.O</h2>
+              <li>iPubedit3.0, the pinnacle of document management innovation. Utilizing Python, Perl, and AnyStyle, this software ensures unparalleled versatility in document handling.</li>
+              <li>Additionally, the system seamlessly generates final outputs in both PDF and XML formats, providing customers with a comprehensive solution for their document management needs.</li>
+            </ul>
+            <ul style="text-align: left;">
+              <h2 style="color: #dbcb34;">SecureUser API</h2>
+              <li>Created a simple REST API to store user details and user template details, performing CRUD operations.</li>
+              <li>Used JWT token for accessing user authorization and MongoDB for retrieving user details and templates.</li>
+            </ul>
+            <ul style="text-align: left;">
+              <h2 style="color: #dbcb34;">Image Processing</h2>
+              <li>Using Python, I've developed a dynamic automation tool that seamlessly alters DPI, changes font names, renames images, adjusts font sizes, and fine-tunes contrast in RGB images.</li>
+            </ul>
+          `;
+        case 'Skills':
+          return `
+            <ul style="text-align: left;">
+              <p><span style="color: darksalmon;">Programming skills:</span> Expertise in Python, Perl, JavaScript for backend development.</p>
+              <p><span style="color: darksalmon;">Database:</span> Solid working knowledge of RDMS like MySQL, NoSQL, PL/SQL.</p>
+              <p><span style="color: darksalmon;">Webservice:</span> Solid knowledge of AWS S3, EC2, RDS, Lambda, CloudWatch.</p>
+              <p><span style="color: darksalmon;">Frameworks:</span> Flask, Django, FastAPI.</p>
+              <p><span style="color: darksalmon;">Webdevelopment:</span> HTML5, CSS3, JSON, JS/jQuery, RestAPI Postman.</p>
+              <p><span style="color: darksalmon;">Fundamental Awareness:</span> Java, C, C++.</p>
+              <p><span style="color: darksalmon;">Other Skills:</span> AJAX, XML, Schema, DTD.</p>
+              <p><span style="color: darksalmon;">Version control:</span> Git, Docker.</p>
+            </ul>
+          `;
+        case 'Activities':
+          return `
+            <ul style="text-align: left;">
+              <li>Participated in React JS workshop conducted by Shaastra at IIT.</li>
+              <li>Participated in an ANDROID workshop by Uniq Technologies.</li>
+              <li>Participated in 9th International Conference on Contemporary Engineering and Technology 2021.</li>
+              <li>Received the GUVI Step into Robotic Process Automation certificate of achievement at the 2020 RPA Skill-A-Thon.</li>
+            </ul>
+          `;
+        case 'Languages':
+          return `
+            <ul style="text-align: left;">
+              <p><span style="color: magenta;">ENGLISH</span> -> Professional</p>
+              <p><span style="color: magenta;">TAMIL</span> -> Native</p>
+              <p><span style="color: magenta;">HINDI</span> -> Conversational</p>
+              <p><span style="color: magenta;">FRENCH</span> -> Beginner</p>
+            </ul>
+          `;
+        case 'Hobbies':
+          return `
+            <ul style="text-align: left;">
+              <p><span style="color: darksalmon;">Duolingo:</span> Learning new languages</p>
+              <p><span style="color: darksalmon;">Writing Quotes:</span> In the dance of words, I find my rhythm; in the tapestry of quotes, I paint my story</p>
+              <p><span style="color: darksalmon;">Gardening:</span> Sustainable living gives you positive energy when you are alone</p>
+              <p><span style="color: darksalmon;">Brain Games:</span> Pixin, Looping, Waterfall, Puzzles</p>
+            </ul>
+          `;
+        default:
+          return '';
+      }
+    }
+  </script>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 </html>
